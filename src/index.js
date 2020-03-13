@@ -6,11 +6,14 @@ import * as serviceWorker from './serviceWorker';
 
 
 import {ThemeContextProvider} from './components/contexts/ThemeContext'
+import { AuthContextProvider } from './components/contexts/ThemeContext';
 
 ReactDOM.render(
      
     <ThemeContextProvider>
-        <App />
+        <AuthContextProvider>
+             <App />
+        </AuthContextProvider>
     </ThemeContextProvider>
 
 , document.getElementById('root'));

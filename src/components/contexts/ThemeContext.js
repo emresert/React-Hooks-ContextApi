@@ -1,6 +1,6 @@
 import React, {createContext, Component } from 'react';
 
-// Context Nesnesi oluşturuldu
+
 export const ThemeContext =  createContext();
 
 
@@ -13,15 +13,13 @@ export class ThemeContextProvider extends Component {
         dark:{syntax:'#ddd',ui:'#333',bg:'#555'}
     }
 
-    // Gönderilecek method tanımlandı
+  
     toggleTheme = ()=>{
         this.setState({isLightTheme : !this.state.isLightTheme})
     }
     render() {
         return (
 
-            //method gönderilmek için prop olarak geçildi
-            //dispatch olmadığı için prop olarak geçtik
 
           <ThemeContext.Provider value={{...this.state, toggleTheme:this.toggleTheme}}>
               {this.props.children}
@@ -30,7 +28,7 @@ export class ThemeContextProvider extends Component {
     }
 }
 
-// Consumer export edilmek üzere oluşturuldu
+
 const  ThemeContextConsumer = ThemeContext.Consumer;
 
 export default ThemeContextConsumer;
