@@ -1,7 +1,7 @@
 // UseContext import edilmeli
-import React, { Component,useContext} from 'react';
+import React, { useContext} from 'react';
 // Kullanılacak Context 
-import ThemeContext from '../contexts/ThemeContext'
+import {ThemeContext} from '../contexts/ThemeContext'
 
 
 
