@@ -1,36 +1,27 @@
-import React, { Component } from 'react';
-import ThemeContextConsumer from '../contexts/ThemeContext'
+// UseContext import edilmeli
+import React, { Component,useContext} from 'react';
+// Kullanılacak Context 
+import ThemeContext from '../contexts/ThemeContext'
 
 
-class BookList extends Component {
-
-    render() {
-        return (
-            
-                    <ThemeContextConsumer>
-                        {
-                            (themeContext) => {
-                                const { isLightTheme, light, dark } = themeContext;
-                                const theme = isLightTheme ? light : dark;
-                                return (
-                                    <div className='book-list' style={{ background: theme.bg, color: theme.syntax }}>
-                                        <ul>
-                                            <li style={{ background: theme.ui }}>test1</li>
-                                            <li style={{ background: theme.ui }}>test2</li>
-                                            <li style={{ background: theme.ui }}>test3</li>
-                                        </ul>
-                                    </div>
-                                );
-
-                            }
-                        }
-                    </ThemeContextConsumer>
-           
-
-        )
 
 
-    }
-}
+// Fonksiyonel component ile Contextapi ve Hooks
+const BookList = () => {
+    const { isLightTheme, light, dark } = useContext(ThemeContext);
+    const theme = isLightTheme ? light : dark;
+    return (
+          
+            <div className='book-list' style={{ background: theme.bg, color: theme.syntax }}>
+                <ul>
+                    <li style={{ background: theme.ui }}>test1</li>
+                    <li style={{ background: theme.ui }}>test2</li>
+                    <li style={{ background: theme.ui }}>test3</li>
+                </ul>
+         </div>
+        
+    );
+};
 
 export default BookList;
+
