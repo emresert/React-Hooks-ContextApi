@@ -5,13 +5,13 @@ export class AuthContextProvider extends Component {
     state = {
         isAuthenticated: false
     }
-    toogleAuth =()=>{
-        this.setState({isAuthenticated : this.state.isAuthenticated})
+    toggleAuth =()=>{
+        this.setState({isAuthenticated: !this.state.isAuthenticated})
     }
     render() {
         return (
             <div>
-                <AuthContext.Provider value={{...this.state,toggleAuth : this.toggleAuth}}>
+                <AuthContext.Provider value={{...this.state,  toggleAuth : this.toggleAuth}}>
                     {this.props.children}
                 </AuthContext.Provider>
             </div>
